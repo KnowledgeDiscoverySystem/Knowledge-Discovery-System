@@ -54,55 +54,55 @@
 
 	This section explains the mapping in prose — ideal for certification reviews.
 
-		**FR‑1 — Mode‑Based Dispatch**
+		FR‑1 — Mode‑Based Dispatch
 
 			SDD 4.1 describes the dispatcher’s three execution paths.
 
 			Code implements this via two conditional branches and a 
 			default multi‑pass path.
 
-		**FR‑2 — Multi‑Pass Rendering**
+		FR‑2 — Multi‑Pass Rendering
 
 			SDD 4.1 defines four rendering passes.
 
 			Code performs four calls to s9() with coordinate rewrites 
 			before each call.
 
-		**FR‑3 — Delta Computation**
+		FR‑3 — Delta Computation
 
 			SDD 4.2 specifies dx/dy computation.
 
 			Code computes dx and dy directly from global coordinate 
 			registers.
 
-		**FR‑4 — Bresenham Initialization**
+		FR‑4 — Bresenham Initialization
 
 			SDD 4.2 defines initialization of step increments, error 
 			term, and loop count.
 
 			Code writes to d06020–d0602E and initializes bx and d06024.
 
-		**FR‑5 — Pixel Iteration Count**
+		FR‑5 — Pixel Iteration Count
 
 			SDD 4.2 defines the main loop.
 
 			Code iterates exactly d06024 times, calling s7() each 
 			iteration.
 
-		**FR‑6 — Error‑Driven Step Selection**
+		FR‑6 — Error‑Driven Step Selection
 
 			SDD 4.2 describes branching based on the sign of bx.
 
 			Code implements this with a two‑path update of si, di, 
 			and bx.
 
-		**FR‑7 — Pixel Plotting Logic**
+		FR‑7 — Pixel Plotting Logic
 
 			SDD 4.3 defines mask‑and‑merge behavior.
 
 			Code performs (old & mask) | AH and writes the result.
 
-		**FR‑8 — Framebuffer Integrity**
+		FR‑8 — Framebuffer Integrity
 
 			SDD 4.3 specifies a single‑byte write.
 
