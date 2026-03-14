@@ -1,11 +1,13 @@
-##The Deterministic Path Forward##
+Founder_Manifesto.md
+
+The Deterministic Path Forward
 
 1. The Problem I Refuse to Ignore
-2. 
-  For decades, organizations have been trapped by their own history.
-  Critical systems — aerospace, medical, defense, civic infrastructure — still run on code written by people who are no longer   here, for hardware that no longer exists, using documentation that was never complete.
 
-  Modernization efforts fail not because teams lack intelligence or resources, but because the process itself is fundamentally broken:
+For decades, organizations have been trapped by their own history.
+Critical systems — aerospace, medical, defense, civic infrastructure — still run on code written by people who are no longer here, for hardware that no longer exists, using documentation that was never complete.
+
+Modernization efforts fail not because teams lack intelligence or resources, but because the process itself is fundamentally broken:
 
 Too much guesswork
 
@@ -20,6 +22,7 @@ This is unacceptable for systems that control aircraft, medical devices, power g
 I built KDS because the world deserves better.
 
 2. My Core Belief
+
 Legacy systems are not mysteries — they are artifacts.
 Artifacts can be decoded.
 Decoded systems can be rebuilt.
@@ -28,6 +31,7 @@ Rebuilt systems can be certified.
 KDS exists to make this truth operational.
 
 3. The Principle: Determinism Above All
+
 KDS is not a tool.
 It is not an assistant.
 It is not a code generator.
@@ -56,6 +60,7 @@ This is not “AI magic.”
 This is engineering.
 
 4. My Rejection of Nondeterminism
+
 The industry has become addicted to probabilistic answers.
 
 “Maybe.”
@@ -74,6 +79,7 @@ If a transformation cannot be proven, traced, or justified, it does not enter th
 Period.
 
 5. The Mission
+
 To give organizations the power to modernize their most critical systems
 without fear, without guesswork, and without losing the truth encoded in their legacy.
 
@@ -89,6 +95,7 @@ This is not a convenience.
 This is a necessity.
 
 6. The Vision
+
 I envision a world where:
 
 No system is “too old” to understand
@@ -104,6 +111,7 @@ No organization is held hostage by the past
 KDS is the foundation of that world.
 
 7. The Standard I Hold
+
 KDS will always be:
 
 Deterministic
