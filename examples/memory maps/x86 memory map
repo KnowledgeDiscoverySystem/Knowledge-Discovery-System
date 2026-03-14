@@ -1,0 +1,150 @@
+MEMORY MAP — Version 1.0 Line‑Drawing Engine
+Subsystem Variables: d06010 – d063a2
+
+1. High‑Level Layout
+
+	Code
+
+	d06010 – d0602F   Pixel mask table + Bresenham working registers
+	d06030 – d0603F   Coordinate registers, latch, and scratch
+	d063A0 – d063AF   Mode flags and dispatcher control
+
+	This subsystem uses global variables only — no stack frames, no local allocations.
+
+⭐ 2. Pixel Mask Table (Used by s7)
+
+	d06010 – d0601F : Pixel Mask Table (32 bytes)
+	Used to mask bits before OR‑ing in the new pixel value.
+
+	Address Range	Name	Size	Description
+	d06010–d0601F	d06010[]	32 bytes	4‑entry repeating mask table used by 
+					s7() to merge pixel bits.
+
+	Usage:
+
+	Code
+
+	mask = d06010[si & 0x03]
+
+⭐ 3. Bresenham Working Registers (Used by s9)
+
+	These variables store the deltas, step increments, and error terms for the 
+	rasterizer.
+
+	Address	Name	Description
+	d06020	StepY_major	Step for Y when X is dominant
+	d06022	StepX_major	Step for X when X is dominant
+	d06024	LoopCount	Number of pixels to draw
+	d06026	DeltaY	Absolute value of dy
+	d06028	StepX_minor	Step for X when Y is dominant
+	d0602A	StepY_minor	Step for Y when Y is dominant
+	d0602C	ErrorStep_minor	Error increment for minor axis
+	d0602E	ErrorStep_major	Error increment for major axis
+
+	Functional Summary
+
+	d06020 / d06022 → increments when bx ≥ 0
+
+	d06028 / d0602A → increments when bx < 0
+
+	d0602C / d0602E → error term adjustments
+
+	d06024 → loop counter for s9
+
+⭐ 4. Coordinate Registers (Used by s8 and s9)
+
+	These represent the start and end points of the line.
+
+	Address	Name	Description
+	d06035	X1	Starting X coordinate
+	d06037	Y1	Starting Y coordinate
+	d06039	X2	Ending X coordinate
+	d0603B	Y2	Ending Y coordinate
+
+	Used by:
+
+	s8() modifies these across four passes
+
+	s9() reads them to compute dx/dy
+
+⭐ 5. Pixel Latch / Attribute Register
+
+	Address	Name	Description
+	d0603D	PixelAttribute	Passed into s7() via DX → AH
+
+	This value becomes the pixel color/bit pattern merged into the framebuffer.
+
+⭐ 6. Mode and Dispatcher Control
+
+	Address	Name	Description
+	d063A2	Mode	Controls s8 behavior: skip, fast‑path, or 4‑pass mode
+
+	Mode Values
+
+	Value	Meaning
+	0x00	Fast‑path (b067e1)
+	0x01	Normal 4‑pass rendering
+	0x02	Skip rendering
+
+⭐ 7. Execution Flow Memory Dependencies
+
+	s8() uses:
+	d063A2 (mode)
+
+	d06035, d06037, d06039, d0603B (coordinates)
+
+	Writes back modified coordinates for each pass
+
+	s9() uses:
+	d06035, d06037, d06039, d0603B (dx/dy)
+
+	d06020–d0602E (Bresenham state)
+
+	d06024 (loop count)
+
+	d0603D (pixel attribute)
+
+	s7() uses:
+	si, di (pixel coordinates)
+
+	d06010[] (mask table)
+
+	AH (pixel value)
+
+	ES:[offset] (framebuffer)
+
+⭐ 8. Memory Map (Consolidated Table)
+
+	Code
+
+	ADDRESS RANGE     NAME                 SIZE     PURPOSE
+	---------------------------------------------------------------------------
+	d06010–d0601F     d06010[]             32 B     Pixel mask table
+	d06020            StepY_major          2 B      Bresenham step (major axis)
+	d06022            StepX_major          2 B      Bresenham step (major axis)
+	d06024            LoopCount            2 B      Number of pixels to draw
+	d06026            DeltaY               2 B      |dy|
+	d06028            StepX_minor          2 B      Bresenham step (minor axis)
+	d0602A            StepY_minor          2 B      Bresenham step (minor axis)
+	d0602C            ErrorStep_minor      2 B      Error increment (minor)
+	d0602E            ErrorStep_major      2 B      Error increment (major)
+	d06035            X1                   2 B      Start X
+	d06037            Y1                   2 B      Start Y
+	d06039            X2                   2 B      End X
+	d0603B            Y2                   2 B      End Y
+	d0603D            PixelAttribute       2 B      Pixel value (AH)
+	d063A2            Mode                 1 B      Dispatcher mode
+
+⭐ 9. Memory Map Summary
+
+	This subsystem uses a tight, deterministic memory layout:
+
+	d06010–d0601F → pixel masks
+
+	d06020–d0602E → Bresenham engine
+
+	d06035–d0603B → coordinates
+
+	d0603D → pixel attribute
+
+	d063A2 → mode selector
