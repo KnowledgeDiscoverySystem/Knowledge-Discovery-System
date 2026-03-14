@@ -1,0 +1,127 @@
+Procedure s8: Main Coordinator
+This routine selects the drawing/steering mode based on a state variable.
+
+C++
+void s8() {
+    if (d063a2 == 0x02) {
+        s9(); // Direct execute line/steer logic
+        return;
+    }
+    
+    if (d063a2 == 0x00) {
+        // Mode 0: Dual call to bit-level routine s7
+        s7(d06035, d06037, d0603d); // Update Coord Set A
+        s7(d06039, d0603b, d0603d); // Update Coord Set B
+        return;
+    }
+
+    // Default Mode: Complex Coordinate Transformation
+    // Save state (Push AX, BX, CX, DX)
+    temp_ax = d06035; temp_bx = d06037;
+    temp_cx = d06039; temp_dx = d0603b;
+
+    d06039 = temp_ax;
+    s9();
+
+    d06035 = temp_cx;
+    d06039 = temp_cx;
+    s9();
+
+    d06035 = temp_ax;
+    d06037 = temp_dx;
+    d06039 = temp_cx;
+    s9();
+
+    d06037 = temp_bx;
+    d0603b = temp_bx;
+    s9();
+    
+    // Restore state (Pop DX, CX, BX, AX)
+}
+Procedure s9: Bresenham-style Line Generator
+
+	This routine calculates the step direction and error terms for a line-drawing 
+	operation.
+
+	void s9() {
+	    int step_x = 1, step_y = 1;
+    
+	    // Calculate Delta Y
+	    int dy = d0603b - d06037;
+	    if (dy < 0) {
+	        step_y = -1;
+	        dy = -dy;
+	    }
+	    d06020 = step_y;
+
+	    // Calculate Delta X
+	    int dx = d06039 - d06035;
+	    if (dx < 0) {
+	        step_x = -1;
+	        dx = -dx;
+	    }
+	    d06022 = step_x;
+
+	    // Determine Octant and Error Factors
+	    int inc_straight, inc_diag;
+	    if (dx < dy) {
+	        inc_straight = 0;
+	        swap(dx, dy); // xchg cx, dx
+	    } else {
+	        inc_diag = 0;
+	    }
+
+	    d06024 = dx; // Primary counter
+	    d06026 = dy; // Secondary counter
+	    d06028 = inc_straight;
+	    d0602a = inc_diag;
+
+	    // Initialize Error Term
+	    int err = (dy << 1); 
+	    d0602c = err;
+	    err -= dx;
+	    int b_var = err;
+	    err -= dx;
+	    d0602e = err;
+
+	    // Iterative Loop
+	    int loop_count = dx + 1;
+	    do {
+	        s7(current_si, current_di, d0603d); // Plot point
+        
+	        if (b_var < 0) {
+	            current_si += d06028;
+	            current_di += d0602a;
+	            b_var += d0602c;
+	        } else {
+	            current_si += d06022;
+	            current_di += d06020;
+	            b_var += d0602e;
+	        }
+	    } while (--loop_count > 0);
+	}
+
+Procedure s7: Bitmask Memory Update
+
+	This procedure performs the actual write to video memory or a bit-array, 
+	calculating an offset based on coordinates.
+
+	void s7(int x, int y, int z) {
+	    // Offset calculation (y-coordinate based)
+	    int offset = (y & 0x01FE) << 3; 
+	    int bx_ptr = offset + ((y & 0x0700) << 2);
+    
+	    // X-coordinate refinement
+	    bx_ptr += (x >> 2); 
+    
+	    // Bitmask selection from lookup table d06010
+	    int mask_idx = (x & 0x03) << 2;
+	    mask_idx += z;
+	    int mask = d06010[mask_idx << 1];
+    
+	    // Read-Modify-Write to ES:[BX]
+	    byte current_val = memory_es[bx_ptr];
+	    current_val &= mask; // Apply mask
+	    current_val |= (y >> 8); // Or with high byte of Y (pixel value/color)
+	    memory_es[bx_ptr] = current_val;
+	}
