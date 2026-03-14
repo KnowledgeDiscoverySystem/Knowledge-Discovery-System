@@ -10,7 +10,7 @@
 
 ### 2. Functional Requirements
 
-	- FR‑1 — Mode‑Based Dispatch
+- FR‑1 — Mode‑Based Dispatch
 
 		The system shall select the line‑drawing path based on the value of 
 		d063a2:
@@ -21,13 +21,13 @@
 
 		Otherwise, the system shall execute four sequential passes of s9().
 
-	- FR‑2 — Multi‑Pass Line Rendering
+- FR‑2 — Multi‑Pass Line Rendering
 		The system shall perform up to four drawing passes, each using 
 		different coordinate permutations derived from:
 
 		d06035, d06037, d06039, d0603b
 
-	- FR‑3 — Delta Computation
+- FR‑3 — Delta Computation
 
 		The system shall compute:
 
@@ -35,7 +35,7 @@
 
 		dy = d06039 - d06035
 
-	- FR‑4 — Bresenham Initialization
+- FR‑4 — Bresenham Initialization
 
 		The system shall initialize:
 
@@ -45,12 +45,12 @@
 
 		Loop count (d06024)
 
-	- FR‑5 — Pixel Iteration
+- FR‑5 — Pixel Iteration
 
 		The system shall iterate exactly d06024 times, calling s7() once per 
 		iteration.
 
-	- FR‑6 — Error‑Driven Step Selection
+- FR‑6 — Error‑Driven Step Selection
 
 		The system shall update (si, di, bx) using one of two paths:
 
@@ -58,7 +58,7 @@
 
 		Else: use increments (d06022, d06020, d0602e)
 
-	- FR‑7 — Pixel Plotting
+- FR‑7 — Pixel Plotting
 
 		The system shall compute a framebuffer offset from (di, si) and write 
 		a masked pixel value:
@@ -67,7 +67,7 @@
 
 		New pixel = (old & mask) | AH
 
-	- FR‑8 — Framebuffer Integrity
+- FR‑8 — Framebuffer Integrity
 
 		The system shall write only one byte per pixel and shall not modify 
 		memory outside the ES segment.
