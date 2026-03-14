@@ -1,0 +1,179 @@
+s8              proc near
+                cmp     byte ptr d063a2,02      ;0642:0371 
+                je      s9                      ;0642:0376 >>xref=<067fe><<
+                                                ;    ;Jump if equal (ZF=1)
+                cmp     byte ptr d063a2,00      ;0642:0378 
+                je      b067e1                  ;0642:037d 
+                                                ;    ;Jump if equal (ZF=1)
+                push    ax                      ;0642:037f 
+                push    bx                      ;0642:0380 
+                push    cx                      ;0642:0381 
+                push    dx                      ;0642:0382 
+                mov     ax,word ptr d06035      ;0642:0383 
+                mov     bx,word ptr d06037      ;0642:0386 
+                mov     cx,word ptr d06039      ;0642:038a 
+                mov     dx,word ptr d0603b      ;0642:038e 
+                mov     word ptr d06039,ax      ;0642:0392 
+                call    s9                      ;0642:0395 >>xref=<067fe><<
+                mov     word ptr d06035,cx      ;0642:0398 
+                mov     word ptr d06039,cx      ;0642:039c 
+                call    s9                      ;0642:03a0 >>xref=<067fe><<
+                mov     word ptr d06035,ax      ;0642:03a3 
+                mov     word ptr d06037,dx      ;0642:03a6 
+                mov     word ptr d06039,cx      ;0642:03aa 
+                call    s9                      ;0642:03ae >>xref=<067fe><<
+                mov     word ptr d06037,bx      ;0642:03b1 
+                mov     word ptr d0603b,bx      ;0642:03b5 
+                call    s9                      ;0642:03b9 >>xref=<067fe><<
+                pop     dx                      ;0642:03bc 
+                pop     cx                      ;0642:03bd 
+                pop     bx                      ;0642:03be 
+                pop     ax                      ;0642:03bf 
+                retn                            ;0642:03c0 
+s9              proc near
+                push    bx                      ;0642:03de 
+                push    cx                      ;0642:03df 
+                push    dx                      ;0642:03e0 
+                push    si                      ;0642:03e1 
+                push    di                      ;0642:03e2 
+                push    ax                      ;0642:03e3 
+                mov     si,0001h                ;0642:03e4 
+                mov     di,0001h                ;0642:03e7 
+                mov     dx,word ptr d0603b      ;0642:03ea 
+                sub     dx,word ptr d06037      ;0642:03ee 
+                jge     b06818                  ;0642:03f2 
+                                                ;    ;Jump if >= (w/ sign)
+                neg     di                      ;0642:03f4 
+                neg     dx                      ;0642:03f6 
+    JMP b06818
+b06818:         mov     word ptr d06020,di      ;0642:03f8 
+                mov     cx,word ptr d06039      ;0642:03fc 
+                sub     cx,word ptr d06035      ;0642:0400 
+                jge     b0682a                  ;0642:0404 
+                                                ;    ;Jump if >= (w/ sign)
+                neg     si                      ;0642:0406 
+                neg     cx                      ;0642:0408 
+    JMP b0682a
+d06020	db
+b0682a:         mov     word ptr d06022,si      ;0642:040a 
+                cmp     cx,dx                   ;0642:040e 
+                jge     b06839                  ;0642:0410 
+                                                ;    ;Jump if >= (w/ sign)
+                xor     si,si                   ;0642:0412 
+                                                ;    ;Load register w/ 0
+                xchg    cx,dx                   ;0642:0414 
+                jmp     short b0683b            ;0642:0416 
+                nop                             ;0642:0418 
+d06022	db
+b06839:         xor     di,di                   ;0642:0419 
+                                                ;    ;Load register w/ 0
+    JMP b0683b
+b0683b:         mov     word ptr d06024,cx      ;0642:041b 
+                mov     word ptr d06026,dx      ;0642:041f 
+                mov     word ptr d06028,si      ;0642:0423 
+                mov     word ptr d0602a,di      ;0642:0427 
+                mov     si,word ptr d06035      ;0642:042b 
+                mov     di,word ptr d06037      ;0642:042f 
+                mov     ax,word ptr d06026      ;0642:0433 
+                shl     ax,1                    ;0642:0436 Multiply by 2's
+                mov     word ptr d0602c,ax      ;0642:0438 
+                sub     ax,cx                   ;0642:043b 
+                mov     bx,ax                   ;0642:043d 
+                sub     ax,cx                   ;0642:043f 
+                mov     word ptr d0602e,ax      ;0642:0441 
+                inc     cx                      ;0642:0444 
+                mov     dx,word ptr d0603d      ;0642:0445 
+    JMP b06869
+d06024	db
+d06026	db
+d06028	db
+d0602a		db
+d0602c		db
+d0602e		db  ; end - added this due to disassembler error
+dseg01          ends
+ 
+b06869:         call    s7                      ;0642:0449 >>xref=<06752><<
+                cmp     bx,00                   ;0642:044c 
+                jge     b06882                  ;0642:044f 
+                                                ;    ;Jump if >= (w/ sign)
+                add     si,word ptr d06028      ;0642:0451 
+                add     di,word ptr d0602a      ;0642:0455 
+                add     bx,word ptr d0602c      ;0642:0459 
+                loop    b06869                  ;0642:045d 
+                                                ;    ;Dec CX;Loop if CX>0
+                jmp     short b06890            ;0642:045f 
+                nop                             ;0642:0461 
+b06882:         add     si,word ptr d06022      ;0642:0462 
+                add     di,word ptr d06020      ;0642:0466 
+                add     bx,word ptr d0602e      ;0642:046a 
+                loop    b06869                  ;0642:046e 
+                                                ;    ;Dec CX;Loop if CX>0
+    JMP b06890
+b06890:         pop     ax                      ;0642:0470 
+                pop     di                      ;0642:0471 
+                pop     si                      ;0642:0472 
+                pop     dx                      ;0642:0473 
+                pop     cx                      ;0642:0474 
+                pop     bx                      ;0642:0475 
+                retn                            ;0642:0476 
+;-----------------------------------------------------
+                db      105d dup (00h)          ;0642:0477 (.)
+s9              endp
+sseg            ends
+ 
+                end     o06420
+ 
+b067e1:         push    si                      ;0642:03c1 
+                mov     si,word ptr d06035      ;0642:03c2 
+                mov     di,word ptr d06037      ;0642:03c6 
+                mov     dx,word ptr d0603d      ;0642:03ca 
+                call    s7                      ;0642:03ce >>xref=<06752><<
+                mov     si,word ptr d06039      ;0642:03d1 
+                mov     di,word ptr d0603b      ;0642:03d5 
+                call    s7                      ;0642:03d9 >>xref=<06752><<
+                pop     si                      ;0642:03dc 
+                retn                            ;0642:03dd 
+s8              endp
+ 
+;<067fe>
+s7              proc near
+                push    bx                      ;0642:0332 
+                push    si                      ;0642:0333 
+                push    ax                      ;0642:0334 
+                mov     ax,di                   ;0642:0335 
+                mov     ah,al                   ;0642:0337 
+                and     ax,01feh                ;0642:0339 
+                shl     ax,1                    ;0642:033c Multiply by 2's
+                shl     ax,1                    ;0642:033e Multiply by 2's
+                shl     ax,1                    ;0642:0340 Multiply by 2's
+                mov     bx,ax                   ;0642:0342 
+                and     bh,07                   ;0642:0344 
+                shl     ax,1                    ;0642:0347 Multiply by 2's
+                shl     ax,1                    ;0642:0349 Multiply by 2's
+                add     bx,ax                   ;0642:034b 
+                mov     ax,si                   ;0642:034d 
+                sar     ax,1                    ;0642:034f 
+                                                ;    ;Divide by 2's w/sign
+                sar     ax,1                    ;0642:0351 
+                                                ;    ;Divide by 2's w/sign
+                add     bx,ax                   ;0642:0353 
+                and     si,0003h                ;0642:0355 
+                shl     si,1                    ;0642:0359 Multiply by 2's
+                shl     si,1                    ;0642:035b Multiply by 2's
+                add     si,dx                   ;0642:035d 
+                shl     si,1                    ;0642:035f Multiply by 2's
+                mov     ax,word ptr d06010[si]  ;0642:0361 
+                and     al,byte ptr es:[bx]     ;0642:0365 
+                or      al,ah                   ;0642:0368 
+                mov     byte ptr es:[bx],al     ;0642:036a 
+                pop     ax                      ;0642:036d 
+                pop     si                      ;0642:036e 
+                pop     bx                      ;0642:036f 
+                retn                            ;0642:0370 
+s7              endp
+ 
+;<06791>
+d06010          db      0f3,00,0f3,04,0f3,08    ;0600:0010 ......
+                db      0f3,0c,0fc,00,0fc,01    ;0600:0016 ......
+                db      0fc,02,0fc,03           ;0600:001c ....
+                db      16d dup (00h)           ;0600:0020 (.)
