@@ -9,7 +9,7 @@ Critical systems — aerospace, medical, defense, civic infrastructure — still
 
 Modernization efforts fail not because teams lack intelligence or resources, but because the process itself is fundamentally broken:
 
-- Bullet Too much guesswork
+- Too much guesswork
 
 - Too much tribal knowledge
 
