@@ -1,4 +1,4 @@
-## 1. STATE DIAGRAM — s8 (Dispatcher)
+1. STATE DIAGRAM — s8 (Dispatcher)
 Controls which rendering path is taken based on mode d063a2
 
  Code
@@ -64,7 +64,7 @@ Controls which rendering path is taken based on mode d063a2
                      +-------------+
                      |   S8_DONE   |
                      +-------------+
-## ⭐ 2. STATE DIAGRAM — s9 (Bresenham Rasterizer)
+⭐ 2. STATE DIAGRAM — s9 (Bresenham Rasterizer)
 Implements the core line‑drawing loop
 
 Code
@@ -124,7 +124,7 @@ Code
                      +----------------+
                      |    S9_DONE     |
                      +----------------+
-## ⭐ 3. STATE DIAGRAM — s7 (Pixel Plotting)
+⭐ 3. STATE DIAGRAM — s7 (Pixel Plotting)
 Computes offset, applies mask, writes pixel
 
 Code
