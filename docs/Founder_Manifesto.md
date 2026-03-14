@@ -40,17 +40,17 @@ KDS is a **deterministic reconstruction engine.**
 
 It takes raw assembly — the most unforgiving, literal, unambiguous representation of system behavior — and transforms it into:
 
-Data Flow Diagrams
+- Bullet Data Flow Diagrams
 
-System Requirements Specifications
+- Bullet System Requirements Specifications
 
-Software Design Documents
+- Bullet Software Design Documents
 
-Traceability matrices
+- Bullet Traceability matrices
 
-Test plans
+- Bullet Test plans
 
-Certification‑grade artifacts
+- Bullet Certification‑grade artifacts
 
 Every output is traceable.
 Every transformation is auditable.
