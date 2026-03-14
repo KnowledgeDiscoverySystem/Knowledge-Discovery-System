@@ -1,0 +1,198 @@
+⭐ 1. TOP‑LEVEL DEPENDENCY MAP (Subsystem View)
+
+	Code
+
+	+------------------+
+	|      s8          |
+	|  Dispatcher      |
+	+--------+---------+
+	         |
+	         | calls (0–4 times)
+	         v
+	+------------------+
+	|       s9         |
+	|  Rasterizer      |
+	+--------+---------+
+	         |
+	         | calls (N times)
+	         v
+	+------------------+
+	|       s7         |
+	|  Pixel Plotter   |
+	+------------------+
+
+	Interpretation:
+
+	s8 depends on s9
+
+	s9 depends on s7
+
+	s7 depends on framebuffer + mask table
+
+	This is a strict top‑down dependency chain.
+
+⭐ 2. ROUTINE‑LEVEL DEPENDENCY MAP
+
+2.1 s8 Dependencies
+
+	Code
+
+	s8 depends on:
+	  - d063A2 (mode)
+	  - d06035 (X1)
+	  - d06037 (Y1)
+	  - d06039 (X2)
+	  - d0603B (Y2)
+	  - b067e1() external fast-path
+	  - s9() rasterizer
+
+	Outputs:
+
+	Modified coordinate registers
+
+	Up to 4 calls to s9()
+
+2.2 s9 Dependencies
+
+	Code
+
+	s9 depends on:
+	  - d06035, d06037, d06039, d0603B (coordinates)
+	  - d06020–d0602E (Bresenham state)
+	  - d06024 (loop count)
+	  - s7() pixel plotter
+
+	Outputs:
+
+	Updated si, di, bx
+
+	Pixel writes via s7
+
+2.3 s7 Dependencies
+
+	Code
+
+	s7 depends on:
+	  - si, di (pixel coordinates)
+	  - d06010[] (mask table)
+	  - AH (pixel attribute)
+	  - ES:[offset] (framebuffer)
+	  - calculate_offset() external
+
+	Outputs:
+
+	One byte written to framebuffer
+
+⭐ 3. DATA DEPENDENCY MAP (Global Variables)
+
+	This shows which routine reads/writes which global variable.
+
+	Code
+
+	VARIABLE       READ BY     WRITTEN BY
+	------------------------------------------------
+	d063A2         s8          external init
+	d06035 (X1)    s8, s9      s8
+	d06037 (Y1)    s8, s9      s8
+	d06039 (X2)    s8, s9      s8
+	d0603B (Y2)    s8, s9      s8
+
+	d06020–d0602E  s9          s9 (initialization)
+	d06024         s9          s9 (initialization)
+
+	d06010[]       s7          external init
+
+	Framebuffer    s7          s7
+
+	Key Insight:
+
+	s8 is the only writer of coordinate registers.
+
+	s9 is the only writer of Bresenham state.
+
+	s7 is the only writer of framebuffer bytes.
+
+⭐ 4. EXECUTION DEPENDENCY MAP (Control‑Flow)
+
+	This shows conditional dependencies — which paths depend on which conditions.
+
+	Code
+
+	d063A2 == 0x02 → s8 returns immediately
+	d063A2 == 0x00 → s8 calls b067e1()
+	else           → s8 performs 4-pass rendering
+
+	Each pass → s9()
+
+	Inside s9:
+	  dx, dy depend on coordinate registers
+	  step increments depend on dx/dy
+	  loop count depends on d06024
+	  each iteration depends on bx sign
+
+	Inside s7:
+	  mask depends on (si & 3)
+	  offset depends on calculate_offset()
+	  pixel value depends on AH
+
+	This is the true dependency logic of the subsystem.
+
+⭐ 5. CONSOLIDATED DEPENDENCY MATRIX
+
+	Component	Depends On	Provides To
+
+	s8	Mode flag, coordinate registers	s9 (calls), coordinate permutations
+	s9	Coordinates, Bresenham state	s7 (calls), updated si/di/bx
+	s7	Mask table, framebuffer, AH	Framebuffer (pixel writes)
+
+	Mask Table	external init	s7
+	Framebuffer	external init	s7
+	Bresenham State	s9	s9 loop
+	Coordinates	external init, s8	s9
+
+⭐ 6. FULL DEPENDENCY GRAPH (ASCII)
+
+	Code
+	                 +------------------+
+	                 |     d063A2       |
+	                 +---------+--------+
+	                           |
+	                           v
+	+------------------+   mode logic   +------------------+
+	|   Coordinates    |--------------->|        s8        |
+	| d06035–d0603B    |                +---------+--------+
+	+---------+--------+                          |
+	          |                                    |
+	          |                                    v
+	          |                          +------------------+
+	          |                          |        s9        |
+	          |                          +---------+--------+
+	          |                                    |
+	          |                                    v
+	          |                          +------------------+
+	          |                          |        s7        |
+	          |                          +---------+--------+
+	          |                                    |
+	          |                                    v
+	          |                          +------------------+
+	          |                          |   Framebuffer    |
+	          |                          +------------------+
+	          |
+	          +--> Bresenham State (d06020–d0602E) ← s9 initializes
+
+⭐ 7. Dependency Map Summary
+
+	The Version 1.0 subsystem has a strict, linear dependency chain:
+
+	Code
+
+	s8 → s9 → s7 → framebuffer
+
+	And a shared global‑state dependency cluster:
+
+	Code
+
+	Coordinates → s8, s9
+	Bresenham State → s9
+	Mask Table → s7
+	Framebuffer → s7
