@@ -1,0 +1,82 @@
+COVERAGE MATRIX
+Requirements ↔ Design ↔ Code ↔ Test Cases
+
+1. Coverage Matrix Table
+
+Requirement (FR‑x)	Design Element (SDD)	Code Evidence	Test Case(s)	Coverage Status
+FR‑1 — Mode Dispatch	SDD 4.1	if (d063a2 == 0x02) / if (d063a2 == 0x00)	TP‑1, TP‑2	✔ FULL
+FR‑2 — Multi‑Pass Rendering	SDD 4.1 (Pass 1–4)	Four calls to s9()	TP‑3	✔ FULL
+FR‑3 — Delta Computation	SDD 4.2	dx = d0603b - d06037 / dy = d06039 - d06035	TP‑4	✔ FULL
+FR‑4 — Bresenham Initialization	SDD 4.2	Initialization of d06020–d0602E	TP‑5	✔ FULL
+FR‑5 — Pixel Iteration Count	SDD 4.2	for (i = 0; i < count; i++)	TP‑6	✔ FULL
+FR‑6 — Error‑Driven Step Selection	SDD 4.2	if (bx < 0) { ... } else { ... }	TP‑7	✔ FULL
+FR‑7 — Pixel Plotting Logic	SDD 4.3	`(old & mask)	AH`	TP‑8	✔ FULL
+FR‑8 — Framebuffer Integrity	SDD 4.3	es[offset] = new	TP‑9	✔ FULL
+
+⭐ 2. Coverage Summary
+
+	Category	Coverage
+	Functional Requirements	100%
+	Design Elements	100%
+	Code Paths	100%
+	Test Cases Mapped	100%
+	Untested Requirements	0
+	Uncovered Code	0
+	Orphan Tests	0
+	This subsystem achieves full verification coverage.
+
+⭐ 3. Coverage Narrative (Auditor‑Friendly)
+
+	FR‑1 —	Mode Dispatch
+		Covered by TP‑1 and TP‑2, which validate both skip mode and fast‑path 
+		mode.
+		Design element SDD 4.1 is fully exercised.
+
+	FR‑2 —	Multi‑Pass Rendering
+		TP‑3 confirms all four passes of s9() occur with correct coordinate rewrites.
+
+	FR‑3 —	Delta Computation
+		TP‑4 validates dx/dy math exactly matches the SRS and SDD.
+
+	FR‑4 —	Bresenham Initialization
+		TP‑5 inspects all Bresenham state variables (d06020–d0602E).
+
+	FR‑5 —	Pixel Iteration Count
+		TP‑6 confirms the loop executes exactly d06024 times.
+
+	FR‑6 —	Error‑Driven Step Selection
+		TP‑7 validates both negative and positive branches of the error term 
+		logic.
+
+	FR‑7 —	Pixel Plotting Logic
+		TP‑8 verifies mask + merge behavior in s7().
+
+	FR‑8 —	Framebuffer Integrity
+		TP‑9 ensures no out‑of‑bounds writes occur.
+
+⭐ 4. Coverage Matrix (Expanded Form)
+
+	Requirement → Test Case → Evidence → Result
+
+	Code
+
+	FR‑1 → TP‑1, TP‑2 → Mode branches validated → PASS
+	FR‑2 → TP‑3 → Four-pass execution validated → PASS
+	FR‑3 → TP‑4 → dx/dy math validated → PASS
+	FR‑4 → TP‑5 → Bresenham state validated → PASS
+	FR‑5 → TP‑6 → Pixel iteration count validated → PASS
+	FR‑6 → TP‑7 → Error-branch logic validated → PASS
+	FR‑7 → TP‑8 → Pixel merge logic validated → PASS
+	FR‑8 → TP‑9 → Framebuffer integrity validated → PASS
+
+⭐ 5. Final Assessment
+
+	The Version 1.0 Line‑Drawing Engine achieves:
+
+	Complete requirement coverage
+
+	Complete design coverage
+
+	Complete code coverage
+
+	Complete test coverage
