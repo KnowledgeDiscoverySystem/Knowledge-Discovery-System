@@ -5,42 +5,42 @@
 
 ## Primary Competencies
 **1. Deterministic Legacy System Reconstruction***
-- Bullet Converts raw assembly into structured, human‑readable engineering artifacts
+- Converts raw assembly into structured, human‑readable engineering artifacts
 
-- Bullet Extracts true system behavior without assumptions or probabilistic inference
+- Extracts true system behavior without assumptions or probabilistic inference
 
-- Bullet Reconstructs functional intent, data flow, control flow, and system boundaries
+- Reconstructs functional intent, data flow, control flow, and system boundaries
 
-- Bullet Produces outputs aligned with aerospace, medical, and defense documentation standards
+- Produces outputs aligned with aerospace, medical, and defense documentation standards
 
 **2. Automated Engineering Documentation Generation**
 - Bullet **Data Flow Diagrams (DFD)** using Yourdon & DeMarco methodology
 
-- Bullet **System Requirements Specifications (SRS)** with full traceability
+- **System Requirements Specifications (SRS)** with full traceability
 
-- Bullet **Software Design Documents (SDD)** including module‑level decomposition
+- **Software Design Documents (SDD)** including module‑level decomposition
 
-- Bullet **Interface definitions, state models,** and **functional mappings**
+- **Interface definitions, state models,** and **functional mappings**
 
 **Certification‑grade artifacts** suitable for regulatory review
 
 **3. Forensic Analysis of Legacy Codebases**
-- Bullet Identifies dead code, unreachable logic, and undocumented behavior
+- Identifies dead code, unreachable logic, and undocumented behavior
 
-- Bullet Maps data stores, external interfaces, and implicit dependencies
+- Maps data stores, external interfaces, and implicit dependencies
 
-- Bullet Reveals hidden assumptions and undocumented system constraints
+- Reveals hidden assumptions and undocumented system constraints
 
-- Bullet Provides a complete behavioral inventory of the legacy system
+- Provides a complete behavioral inventory of the legacy system
 
 **4. Modernization Enablement**
-- Bullet Creates a deterministic foundation for system re‑engineering
+- Creates a deterministic foundation for system re‑engineering
 
-- Bullet Supports migration to modern languages, architectures, and platforms
+- Supports migration to modern languages, architectures, and platforms
 
-- Bullet Ensures modernization efforts begin with verified truth, not speculation
+- Ensures modernization efforts begin with verified truth, not speculation
 
-- Bullet Reduces modernization risk, cost, and schedule uncertainty
+- Reduces modernization risk, cost, and schedule uncertainty
 
 ## Differentiators
 ### Deterministic, Not Probabilistic
@@ -50,13 +50,13 @@ Every output is derived directly from the source code and is fully traceable.
 ### Certification‑Aligned
 Outputs are structured to meet the expectations of:
 
-- Bullet FAA / EASA (DO‑178C, DO‑254)
+- FAA / EASA (DO‑178C, DO‑254)
 
-- Bullet FDA (IEC 62304)
+- FDA (IEC 62304)
 
-- Bullet DOD / DHS mission‑critical systems
+- DOD / DHS mission‑critical systems
 
-- Bullet NIST and federal documentation standards
+- NIST and federal documentation standards
 
 ### Complete Transparency
 Every transformation step is auditable.
@@ -76,15 +76,15 @@ KDS captures the truth encoded in the system itself — not in the memories of l
 
 ### Past Performance & Use Cases
 
-- Bullet Aerospace flight control and avionics reconstruction
+- Aerospace flight control and avionics reconstruction
 
-- Bullet Medical device firmware documentation
+- Medical device firmware documentation
 
-- Bullet Defense system reverse engineering
+- Defense system reverse engineering
 
-- Bullet Industrial control system modernization
+- Industrial control system modernization
 
-- Bullet Government legacy system risk assessment
+- Government legacy system risk assessment
 
 ### Corporate Information
 **Organization:** KDS (Knowledge Discovery System)
