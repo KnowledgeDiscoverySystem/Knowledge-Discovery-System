@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/logo.png" alt="KDS Logo" width="200">
+  <img src="assets/logo.jpg" alt="KDS Logo" width="200">
 </p>
 # Knowledge Discovery System (KDS)  
 ### Deterministic Legacy System Reconstruction  
