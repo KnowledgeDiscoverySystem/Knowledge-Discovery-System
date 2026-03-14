@@ -47,7 +47,7 @@
 KDS does not guess, infer, or hallucinate.
 Every output is derived directly from the source code and is fully traceable.
 
-## Certification‑Aligned
+### Certification‑Aligned
 Outputs are structured to meet the expectations of:
 
 - Bullet FAA / EASA (DO‑178C, DO‑254)
