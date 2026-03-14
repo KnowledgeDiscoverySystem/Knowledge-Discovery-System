@@ -1,6 +1,7 @@
 <p align="center">
   <img src="assets/logo.jpg" alt="KDS Logo" width="200">
 </p>
+
 # Knowledge Discovery System (KDS)  
 ### Deterministic Legacy System Reconstruction  
 ### From Raw Assembly to Certification‑Grade Engineering Documentation
@@ -82,7 +83,7 @@ Legacy systems run the world:
 
 But most of these systems are undocumented, fragile, and expensive to maintain.
 
-Sovereign Node reconstructs the **silicon truth** — the real behavior of the system — and produces documentation that is:
+Knowledge Discovery System reconstructs the **silicon truth** — the real behavior of the system — and produces documentation that is:
 
 - Certifiable  
 - Auditable  
@@ -96,7 +97,7 @@ This eliminates the dependency on rare legacy engineers and reduces modernizatio
 
 # 🔍 How It Works
 
-Sovereign Node uses a deterministic pipeline:
+KDS uses a deterministic pipeline:
 
 1. **ASM Input**  
 2. **Forensic Reconstruction**  
@@ -146,7 +147,7 @@ Where logic errors can be catastrophic.
 # 📂 Repository Structure
 
 ```
-/SovereignNode
+/KnowledgeDiscoverySystem
 │
 ├── examples/
 │   ├── asm_input/
@@ -184,7 +185,7 @@ See `/docs/youtube_scripts/` for:
 
 # 🧭 Target Markets
 
-Sovereign Node is built for:
+KDS is built for:
 
 - Aerospace & Defense  
 - Medical Devices  
