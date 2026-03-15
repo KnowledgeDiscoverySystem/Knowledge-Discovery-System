@@ -2,216 +2,122 @@
   <img src="assets/logo.jpg" alt="KDS Logo" width="200">
 </p>
 
-# Knowledge Discovery System (KDS)  
-### Deterministic Legacy System Reconstruction  
-### From Raw Assembly to Certification‑Grade Engineering Documentation
+# Knowledge Discovery System (KDS)
 
-Knowledge Discovery System is a deterministic, AI‑assisted engineering system that reconstructs **complete, certifiable documentation** directly from raw assembly code — including codebases from the 1980s, industrial controllers, aerospace firmware, medical devices, and mission‑critical embedded systems.
+## Deterministic Reconstruction for Critical-System Modernization
 
-This is not a summarizer.  
-This is not a hallucination engine.  
-This is **forensic engineering intelligence**.
+KDS is not a product. It is not a tool you download, configure, or run. It is a **proprietary, founder-operated modernization capability** built on a deterministic analysis engine that has no peer, no competitor, and no equivalent in industry. KDS exists for one purpose: to restore truth, structure, and engineering certainty to legacy systems that were never supposed to fail.
 
-I originally built the core of this system in **1985**, demonstrated it live at trade shows, and used it to translate assembly into C++ and compile new executables.  
-Today, I’ve rebuilt it with modern tooling and deterministic AI to solve a **$1.5 trillion global legacy‑modernization problem**.
+For decades, organizations have been forced to choose between two bad options: manual reverse engineering or probabilistic AI inference. Both introduce ambiguity, risk, and drift. KDS eliminates all three. It reconstructs system knowledge directly from the binary with forensic precision, producing certification-grade engineering documentation that is complete, auditable, and traceable.
 
----
+This repository is not a software distribution. It is the public-facing doctrine of a capability that operates privately, securely, and exclusively under the direction of its founder.
 
-# 🚀 What Knowledge Discovery System Produces
+## What KDS Is
 
-From a single block of assembly, the system generates:
+KDS is a **deterministic reconstruction service** for aerospace, medical, defense, industrial, and safety-critical domains. It transforms raw assembly into:
 
-### **1. Pseudo Code**
-- Clean, C‑style reconstruction  
-- 4‑space indents  
-- Deterministic formatting  
-- No hallucinations  
+- System Requirements Specifications (SRS)
 
-### **2. Full SRS (MIL‑STD‑498 Structure)**
-- 1. Scope  
-- 2. Referenced Documents  
-- 3. Requirements  
-- 3.1 Functional Requirements  
-- 3.2 External Interface Requirements  
-- 3.3 Internal Data Requirements  
-- 3.4 Performance Requirements  
-- 3.5 Logical Database Requirements  
-- 3.6 Design Constraints  
-- 3.7 Software System Attributes  
-- 3.8 Other Requirements  
-- 4. Qualification Provisions  
-- 5. Requirements Traceability  
-- 6. Notes  
-- Appendices A–E  
+- Software Design Documents (SDD)
 
-### **3. Full SDD**
-- 1.0 Overview  
-- 2.0 Data Design (including d060xx mapping)  
-- 3.0 Component Logic  
-- Flowcharts  
-- State diagrams  
-- Memory maps  
+- Data Flow Diagrams (DFDs)
 
-### **4. Engineering Artifacts**
-- Flowcharts  
-- Data Flow Diagrams  
-- Data Dictionaries  
-- Traceability Matrices  
-- Verification Matrices  
-- Test Plans  
-- Test Procedures  
-- Coverage Matrices  
-- QA Sign‑Off Sheets  
+- Memory maps and interface definitions
 
-All hyperlinked.  
-All navigable.  
-All deterministic.
+- Traceability matrices
 
----
+- Verification and validation artifacts
 
-# 🧠 Why This Matters
+Every output is derived directly from Assembly. No inference. No guessing. No hallucination. No tribal knowledge required.
 
-Legacy systems run the world:
+## What Makes KDS Unique
 
-- Aerospace  
-- Defense  
-- Medical  
-- Industrial automation  
-- Mainframe  
-- Energy  
-- Transportation  
+### Deterministic Truth Extraction
 
-But most of these systems are undocumented, fragile, and expensive to maintain.
+KDS does not approximate behavior. It derives it.
 
-Knowledge Discovery System reconstructs the **silicon truth** — the real behavior of the system — and produces documentation that is:
+## Forensic Reconstruction
 
-- Certifiable  
-- Auditable  
-- Traceable  
-- Deterministic  
-- Repeatable  
+Every artifact is traceable back to the exact instruction sequence that produced it.
 
-This eliminates the dependency on rare legacy engineers and reduces modernization costs by **90%**.
+## Certification-Grade Documentation
 
----
+Outputs align with aerospace, medical, and defense engineering standards.
 
-# 🔍 How It Works
+## Zero Dependency on Legacy Knowledge
 
-KDS uses a deterministic pipeline:
+KDS restores systems even when documentation is missing, outdated, or contradictory.
 
-1. **ASM Input**  
-2. **Forensic Reconstruction**  
-3. **Pseudo Code Generation**  
-4. **SRS Synthesis**  
-5. **SDD Synthesis**  
-6. **Artifact Generation**  
-7. **Logic Delta Verification**  
-8. **Hyperlinked Navigation**  
+## Founder-Operated Precision
 
-The system can jump instantly between:
+The system is not a commodity tool. It is a capability executed with the discipline, rigor, and engineering philosophy of its creator.
 
-- DFD nodes  
-- Code blocks  
-- Data structures  
-- Interfaces  
-- Requirements  
-- Design elements  
-- Test cases  
+## Repository Structure
 
-Even if the source and destination are **thousands of lines apart** or in **different files**.
+This repository contains the conceptual, philosophical, and methodological foundation of KDS:
 
----
+**Founder_Manifesto.md** – The doctrine and worldview behind deterministic engineering.
 
-# 🛡️ Logic Delta — The Verification Engine
+**Capabilities_Statement.md** – A formal articulation of what KDS delivers.
 
-The Logic Delta scanner performs deterministic density analysis to verify:
+**Methodology.md** – The high-level process that governs deterministic reconstruction.
 
-- Documentation matches code  
-- No logic drift  
-- No hidden branches  
-- No undocumented behavior  
-- No dead code  
-- No unreachable states  
+**CFP_Abstract.md** – The conference-ready abstract introducing the KDS paradigm.
 
-This is critical for:
+**examples/** – Fictional but representative artifacts demonstrating output structure.
 
-- Aerospace  
-- Defense  
-- Medical devices  
-- Industrial safety systems  
+**LICENSE.md** – A proprietary license protecting all intellectual property.
 
-Where logic errors can be catastrophic.
+These documents exist to inform, not to enable replication.
 
----
+## Engagement Model
 
-# 📂 Repository Structure
+KDS is offered as a **confidential, high-assurance modernization service.** Engagements typically include:
 
-```
-/KnowledgeDiscoverySystem
-│
-├── examples/
-│   ├── asm_input/
-│   ├── pseudo_code/
-│   ├── srs/
-│   ├── sdd/
-│   ├── flowcharts/
-│   ├── traceability/
-│   └── test_plans/
-│
-├── docs/
-│   ├── Founder_Manifesto.md
-│   ├── Capability_Statement.md
-│   ├── CFP_Abstract.md
-│   └── Methodology.md
-│
-├── screenshots/
-│
-└── README.md
-```
+**1. Binary intake and scoping**
 
----
+**2. Deterministic reconstruction of system behavior**
 
-# 🎥 Demo Videos (Scripts Included)
+**3. Generation of engineering documentation**
 
-See `/docs/youtube_scripts/` for:
+**4. Traceability and verification mapping**
 
-- ASM → Pseudo Code  
-- ASM → SRS  
-- ASM → SDD  
-- Logic Delta Verification  
-- Full Modernization Pipeline  
+**5. Delivery of a complete, auditable engineering package**
 
----
+All work is performed directly by the founder.
 
-# 🧭 Target Markets
+## Who This Is For
 
-KDS is built for:
+KDS serves organizations responsible for systems where failure is not an option:
 
-- Aerospace & Defense  
-- Medical Devices  
-- Industrial Automation  
-- Mainframe Modernization  
-- Embedded Systems  
-- Safety‑Critical Software  
-- Government & Public Sector  
+- Aerospace and avionics
 
----
+- Medical devices
 
-# 📜 Founder’s Manifesto
+- Defense and national security systems
 
-See `/docs/Founder_Manifesto.md` for the full story of how this system began in 1985 and evolved into a modern deterministic AI pipeline.
+- Industrial control systems
 
----
+- Critical infrastructure
 
-# 🛠️ Capability Statement
+If your system is undocumented, partially documented, or too risky to modify, KDS restores the engineering truth required to move forward.
 
-See `/docs/Capability_Statement.md` for government and enterprise procurement.
+##Contact
 
+To discuss an engagement or request a private briefing, please reach out through your preferred secure channel.
+
+KDS operates globally and supports classified and unclassified environments.
+
+## License
+
+All content in this repository is proprietary and protected. No rights are granted to copy, modify, distribute, or derive from any material herein. See **LICENSE.md** for full terms.
+
+KDS is a sovereign, deterministic modernization capability. This repository is its public doctrine—not its implementation.
 ---
 
 # 📬 Contact
 
 If you work in modernization, reverse engineering, or safety‑critical systems, reach out.
 
-**Steve**  
+**Steve Whiseant**  
 Knowledge Discovery Systems  
