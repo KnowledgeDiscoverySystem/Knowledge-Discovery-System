@@ -52,6 +52,24 @@ KDS restores systems even when documentation is missing, outdated, or contradict
 
 The system is not a commodity tool. It is a capability executed with the discipline, rigor, and engineering philosophy of its creator.
 
+## Demonstrated Scale
+
+One representative reconstruction, publicly referenceable in this repository, illustrates the scale KDS operates at:
+
+- **Source**: 4,969,515 lines of ARM64 assembly (~5 million LOC)
+
+- **Entities extracted**: 112,480
+
+- **Hierarchy depth**: 3,553 levels
+
+- **System complexity**: 4,852 total (average node complexity 3.12 across 1,006 top-level entities; max node complexity 30)
+
+- **Output**: a 3,880-page Data Flow Diagram, fully cross-referenced page to page, published in [`3880 Page DFD ARM64 ASM/`](./3880%20Page%20DFD%20ARM64%20ASM/)
+
+Every entity and every relationship in this diagram traces back to a specific instruction sequence in the source binary. No inference. No sampling. No reconstruction shortcuts.
+
+Note: GitHub's own folder browser truncates directory listings above roughly 1,000 files, so not all 3,880 pages will appear when browsing that folder directly on GitHub. Every file is present in the repository regardless -- clone the repository, or link to a specific page directly (e.g. `.../3880%20Page%20DFD%20ARM64%20ASM/Page_1500.pdf`), to reach any page not shown in the truncated listing.
+
 ## Repository Structure
 
 This repository contains the conceptual, philosophical, and methodological foundation of KDS:
@@ -102,22 +120,15 @@ KDS serves organizations responsible for systems where failure is not an option:
 
 If your system is undocumented, partially documented, or too risky to modify, KDS restores the engineering truth required to move forward.
 
-##Contact
-
-To discuss an engagement or request a private briefing, please reach out through your preferred secure channel.
-
-KDS operates globally and supports classified and unclassified environments.
-
 ## License
 
 All content in this repository is proprietary and protected. No rights are granted to copy, modify, distribute, or derive from any material herein. See **LICENSE.md** for full terms.
 
 KDS is a sovereign, deterministic modernization capability. This repository is its public doctrine—not its implementation.
----
 
-# 📬 Contact
+## Contact
 
-If you work in modernization, reverse engineering, or safety‑critical systems, reach out.
+To discuss an engagement, request a private briefing, or talk about modernization, reverse engineering, or safety-critical systems, reach out through your preferred secure channel. KDS operates globally and supports classified and unclassified environments.
 
-**Steve Whiseant**  
-Knowledge Discovery Systems  
+**Steve Whiseant**
+Knowledge Discovery Systems
