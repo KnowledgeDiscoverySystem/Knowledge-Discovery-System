@@ -1,8 +1,14 @@
-# 3880-Page DFD -- ARM64 Assembly Reconstruction
+# 3,883-Page DFD -- ARM64 Assembly Reconstruction
+
+*(This folder keeps its original "3880 Page DFD ARM64 ASM" path for link stability across releases -- the model itself now spans 3,883 pages; see below.)*
 
 This folder contains a complete Data Flow Diagram reconstructed by KDS from a single ARM64 assembly codebase, published one page per file (`Page_1.pdf` through `Page_3883.pdf`).
 
-*Updated 2026-09-21: re-exported after a round of diagram layout fixes (dataflow labels no longer overwrite adjacent process/term boxes, off-page/Terminator columns space themselves correctly, and PDF export dialogs on macOS were fixed) -- same source, cleaner rendering. Page count moved from 3,880 to 3,883.*
+## Why this update matters
+
+This entire model -- all 3,883 pages of it -- was found to need correction, fixed, rebuilt, and republished in under a single day. Real defects surfaced in review (a dataflow's label overwriting the very process or terminal it describes, an off-page reference column crowding its own connector line, a macOS export dialog silently failing to appear) went from "spotted on screen" to "fixed in the underlying tool, verified against this full 5-million-line model, and live on GitHub" in the same working session. That turnaround -- diagnose, fix, regenerate a model of this size, and validate the result -- is not the pace legacy-system reverse engineering has run at before. A CASE tool that can roll a lesson learned into the next full model same-day, rather than next release cycle, changes what "iterating on a model" means: review stops being a one-way report and becomes a loop you can close before the day is out.
+
+This release also completes the model's reference resolution against the target's own compiler/runtime library. Every call this codebase makes into the Qt framework it links against -- `QApplication`, `QCoreApplication`, `QWidget`, `QJsonValue`, and the rest -- is now identified and drawn as its own entity, standing alongside the application's own logic in the same DFD, rather than showing up as an unresolved or opaque external call. The picture this model draws is no longer just "your code" -- it's your code and everything it actually runs on, as one connected system.
 
 ## Statistics
 
