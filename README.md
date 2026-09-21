@@ -64,11 +64,13 @@ One representative reconstruction, publicly referenceable in this repository, il
 
 - **System complexity**: 4,852 total (average node complexity 3.12 across 1,006 top-level entities; max node complexity 30)
 
-- **Output**: a 3,880-page Data Flow Diagram, fully cross-referenced page to page, published in [`3880 Page DFD ARM64 ASM/`](./3880%20Page%20DFD%20ARM64%20ASM/)
+- **Output**: a 3,883-page Data Flow Diagram, fully cross-referenced page to page, published in [`3880 Page DFD ARM64 ASM/`](./3880%20Page%20DFD%20ARM64%20ASM/)
 
 Every entity and every relationship in this diagram traces back to a specific instruction sequence in the source binary. No inference. No sampling. No reconstruction shortcuts.
 
-Note: GitHub's own folder browser truncates directory listings above roughly 1,000 files, so not all 3,880 pages will appear when browsing that folder directly on GitHub. Every file is present in the repository regardless -- clone the repository, or link to a specific page directly (e.g. `.../3880%20Page%20DFD%20ARM64%20ASM/Page_1500.pdf`), to reach any page not shown in the truncated listing.
+Note: GitHub's own folder browser truncates directory listings above roughly 1,000 files, so not all 3,883 pages will appear when browsing that folder directly on GitHub. Every file is present in the repository regardless -- clone the repository, or link to a specific page directly (e.g. `.../3880%20Page%20DFD%20ARM64%20ASM/Page_1500.pdf`), to reach any page not shown in the truncated listing.
+
+**Update, 2026-09-21**: this full 3,883-page model was diagnosed, corrected, and republished in under a single day, and now resolves every call the source binary makes into its own compiler/runtime library (Qt) as a named entity in the model, not an opaque external reference. See [the folder's own README](./3880%20Page%20DFD%20ARM64%20ASM/README.md) for what changed and why it matters -- deterministic reconstruction at this scale, iterated same-day, is not a pace legacy-system modernization has run at before.
 
 ## Repository Structure
 
