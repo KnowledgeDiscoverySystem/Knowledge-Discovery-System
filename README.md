@@ -6,7 +6,7 @@
 
 ## Deterministic Reconstruction for Critical-System Modernization
 
-KDS is not a product. It is not a tool you download, configure, or run. It is a **proprietary, deterministic modernization capability** built on an analysis engine that has no peer, no competitor, and no equivalent in industry. KDS exists for one purpose: to restore truth, structure, and engineering certainty to legacy systems that were never supposed to fail.
+KDS is a **proprietary, deterministic modernization capability** built on an analysis engine that has no peer, no competitor, and no equivalent in industry. KDS exists for one purpose: to restore truth, structure, and engineering certainty to legacy systems that were never supposed to fail.
 
 For decades, organizations have been forced to choose between two bad options: manual reverse engineering or probabilistic AI inference. Both introduce ambiguity, risk, and drift. KDS eliminates all three. It reconstructs system knowledge directly from the binary with forensic precision, producing certification-grade engineering documentation that is complete, auditable, and traceable.
 
