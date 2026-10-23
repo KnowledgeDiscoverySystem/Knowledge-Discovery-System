@@ -70,7 +70,6 @@ Every entity and every relationship in this diagram traces back to a specific in
 
 Note: GitHub's own folder browser truncates directory listings above roughly 1,000 files, so not all 3,883 pages will appear when browsing that folder directly on GitHub. Every file is present in the repository regardless -- clone the repository, or link to a specific page directly (e.g. `.../3880%20Page%20DFD%20ARM64%20ASM/Page_1500.pdf`), to reach any page not shown in the truncated listing.
 
-**Update, 2026-10-21**: this release corrects a backtracking-eligibility defect in the reconstruction engine itself. An internal retry-count limit, meant only to bound a single lane-routing attempt, was being reused as a hard per-edge cap on contesting a blocking reservation during backtracking -- independent of, and far tighter than, the engine's own much larger page-wide backtracking budget, which log evidence showed sitting mostly unused while real connections on the model's most complex hubs were silently left undrawn. The fix removes the reused cap and leaves the engine's real, pre-existing budget as the only limit; every page it could plausibly have affected was recomputed and re-validated against the full 3,883-page model, not spot-checked. See [the folder's own README](./3880%20Page%20DFD%20ARM64%20ASM/README.md) for the evidence and what changed.
 
 ## Repository Structure
 
