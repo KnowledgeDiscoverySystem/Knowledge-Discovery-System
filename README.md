@@ -6,11 +6,11 @@
 
 ## Deterministic Reconstruction for Critical-System Modernization
 
-KDS is not a product. It is not a tool you download, configure, or run. It is a **proprietary, founder-operated modernization capability** built on a deterministic analysis engine that has no peer, no competitor, and no equivalent in industry. KDS exists for one purpose: to restore truth, structure, and engineering certainty to legacy systems that were never supposed to fail.
+KDS is not a product. It is not a tool you download, configure, or run. It is a **proprietary, deterministic modernization capability** built on an analysis engine that has no peer, no competitor, and no equivalent in industry. KDS exists for one purpose: to restore truth, structure, and engineering certainty to legacy systems that were never supposed to fail.
 
 For decades, organizations have been forced to choose between two bad options: manual reverse engineering or probabilistic AI inference. Both introduce ambiguity, risk, and drift. KDS eliminates all three. It reconstructs system knowledge directly from the binary with forensic precision, producing certification-grade engineering documentation that is complete, auditable, and traceable.
 
-This repository is not a software distribution. It is the public-facing doctrine of a capability that operates privately, securely, and exclusively under the direction of its founder.
+This repository is not a software distribution. It is the public-facing doctrine of a capability built and proven under rigorous, disciplined engineering standards.
 
 ## What KDS Is
 
@@ -32,25 +32,25 @@ Every output is derived directly from Assembly. No inference. No guessing. No ha
 
 ## What Makes KDS Unique
 
-### Deterministic Truth Extraction
+### Logic Is the Only Constant
 
-KDS does not approximate behavior. It derives it.
+Every programming language, no matter how it's written -- 1960s COBOL, 1980s Mil-Std-1750A, modern C++ -- converges into one objective reality: machine code. KDS targets that layer directly, reading the signal of actual execution. The result is a reconstruction that stands entirely on its own: independent of the original source language, the original developers, or any existing documentation.
 
-## Forensic Reconstruction
+### Speed at a Scale No Manual Process Has Matched
 
-Every artifact is traceable back to the exact instruction sequence that produced it.
+KDS performs millions of logical checks per second, turning 5,000 lines of assembly into a complete, navigable model in under a minute. Because the engine resolves the entire model simultaneously rather than building it line by line, a lesson learned this morning can be reflected in a corrected model that same afternoon -- real iteration, at a pace and scale this kind of reconstruction has never run at before.
 
-## Certification-Grade Documentation
+### Traceability Down to the Register
 
-Outputs align with aerospace, medical, and defense engineering standards.
+KDS traces the life of a variable: how data enters through a port, moves through an accumulator, lands in a register bank, and influences a control branch. Every call the binary makes into its own compiler or runtime library is identified and drawn as its own named entity, standing alongside the application's own logic. Every entity and every relationship in the model traces back to a specific instruction sequence in the source binary.
 
-## Zero Dependency on Legacy Knowledge
+### Full Standards Compliance at Real-World Scale
 
-KDS restores systems even when documentation is missing, outdated, or contradictory.
+The resulting Data Flow Diagram is 100% compliant with the Yourdon/DeMarco methodology, produced at a scale few have ever attempted. The CASE environment adds a further layer automatically: hover-text abstracts on every library call, giving readers full context on what a routine does without ever leaving the diagram.
 
-## Founder-Operated Precision
+### Quality, Verified at Every Step
 
-The system is not a commodity tool. It is a capability executed with the discipline, rigor, and engineering philosophy of its creator.
+Every reconstruction is held to one rigorous standard: every connection placed correctly, every route resolved cleanly. Each determination is backed by direct evidence from the engine's own execution logs -- exact candidate counts, exact reservation histories -- so the result is provably correct. The same discipline that produces the model also audits it, page by page, confirming its accuracy before it's called complete.
 
 ## Demonstrated Scale
 
@@ -104,8 +104,6 @@ KDS is offered as a **confidential, high-assurance modernization service.** Enga
 
 **5. Delivery of a complete, auditable engineering package**
 
-All work is performed directly by the founder.
-
 ## Who This Is For
 
 KDS serves organizations responsible for systems where failure is not an option:
@@ -130,7 +128,7 @@ KDS is a sovereign, deterministic modernization capability. This repository is i
 
 ## Contact
 
-To discuss an engagement, request a private briefing, or talk about modernization, reverse engineering, or safety-critical systems, reach out through your preferred secure channel. KDS operates globally and supports classified and unclassified environments.
+If a capability like this is relevant to what your organization is building, securing, or trying to understand, I'd welcome hearing from you. Reach out to talk about the technology, ask questions, or explore where a conversation might lead. KDS operates globally and supports classified and unclassified environments.
 
 **Steve Whiseant**
 Knowledge Discovery Systems
