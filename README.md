@@ -4,7 +4,9 @@
 
 # Knowledge Discovery System (KDS)
 
-## Solving the Model Drift Problem
+## The Challenge Has Never Been Generating a Model
+
+The challenge has been keeping the model synchronized with reality.
 
 For decades, software engineering has struggled with a fundamental problem.
 
@@ -28,7 +30,7 @@ The model becomes a historical artifact rather than a representation of reality.
 
 This failure mode is one of the primary reasons traditional CASE (Computer-Aided Software Engineering) environments never achieved their original promise.
 
-Knowledge Discovery System (KDS) exists to address that problem.
+Knowledge Discovery System (KDS) was created to address that problem.
 
 Rather than treating architecture, requirements, documentation, traceability, and engineering artifacts as static deliverables, KDS continuously derives them from the implementation itself, enabling regeneration as software evolves.
 
@@ -38,7 +40,7 @@ Rather than treating architecture, requirements, documentation, traceability, an
 
 ---
 
-# Start Here
+# Evidence First
 
 The most significant artifact currently published in this repository is a generated Data Flow Diagram (DFD) consisting of approximately **3,883 pages**.
 
@@ -46,22 +48,21 @@ This is not a conceptual example.
 
 It is an actual engineering artifact generated from analysis of a real software system.
 
-The PDF contains:
+The published artifact contains:
 
 - Recovered data flows
 - Hyperlinked navigation throughout the model
 - Engineering traceability structures
-- Associated source implementation used during analysis
+- Associated implementation details
+- Cross-referenced engineering artifacts
 
 Rather than describing a capability, this repository publishes generated engineering output for direct inspection.
 
-Readers are encouraged to examine the artifacts and evaluate the results for themselves.
+Readers are encouraged to inspect the artifact and evaluate the results for themselves.
 
 ---
 
 # Why This Matters
-
-The software industry has spent decades trying to solve the problem of understanding, documenting, maintaining, and modernizing complex systems.
 
 The challenge has never been creating documentation once.
 
@@ -76,7 +77,9 @@ As software evolves:
 
 Eventually teams stop trusting the documentation because it no longer represents the software.
 
-KDS is built around the principle that engineering knowledge should be regenerated from implementation rather than manually maintained after the fact.
+KDS is built around a different principle:
+
+**Engineering knowledge should be regenerated from implementation rather than manually maintained after the fact.**
 
 ---
 
@@ -111,7 +114,7 @@ Organizations responsible for long-lived software systems commonly encounter:
 - Loss of institutional knowledge
 - Increasing modernization risk
 
-This challenge spans multiple sectors:
+This challenge spans multiple sectors including:
 
 - Aerospace and Avionics
 - Defense Systems
@@ -120,7 +123,7 @@ This challenge spans multiple sectors:
 - Critical Infrastructure
 - Long-Lifecycle Embedded Systems
 
-In many cases organizations are expected to maintain, certify, secure, modernize, or extend software they do not fully understand.
+In many cases, organizations are expected to maintain, certify, secure, modernize, or extend software they do not fully understand.
 
 ---
 
@@ -180,32 +183,139 @@ Engineering artifacts remain useful only so long as they remain connected to rea
 
 # Reconstruction Workflow
 
-```text
-Legacy System
-      |
-      v
-Implementation Analysis
-      |
-      v
-Control Flow Recovery
-      |
-      v
-Data Flow Recovery
-      |
-      v
-Architectural Reconstruction
-      |
-      v
-Requirements Recovery
-      |
-      v
-Documentation Generation
-      |
-      v
-Traceability Generation
-      |
-      v
-Verification Artifacts
-      |
-      v
-Regeneration as the System Evolves
+    Legacy System
+          |
+          v
+    Implementation Analysis
+          |
+          v
+    Control Flow Recovery
+          |
+          v
+    Data Flow Recovery
+          |
+          v
+    Architectural Reconstruction
+          |
+          v
+    Requirements Recovery
+          |
+          v
+    Documentation Generation
+          |
+          v
+    Traceability Generation
+          |
+          v
+    Verification Artifacts
+          |
+          v
+    Regeneration as the System Evolves
+
+---
+
+# Relevant Topics
+
+- CASE Tools
+- Software Architecture Recovery
+- Legacy Software Modernization
+- Requirements Recovery
+- Data Flow Analysis
+- Traceability Engineering
+- Model-Based Engineering (MBSE)
+- Digital Engineering
+- Systems Engineering
+- Reverse Engineering
+- Software Documentation
+- Verification and Validation
+- Critical Systems Engineering
+- Legacy Code Analysis
+- Engineering Knowledge Management
+
+---
+
+# Repository Contents
+
+This repository contains public information describing KDS methodology together with representative engineering artifacts.
+
+Repository contents may include:
+
+- Generated Data Flow Diagrams
+- Architectural Models
+- Traceability Structures
+- Reconstruction Artifacts
+- Research Material
+- Technical Papers
+- Conference Submissions
+- Methodological Documentation
+
+Where possible, generated artifacts are published for independent inspection.
+
+The intent is to provide evidence of results rather than descriptions of capabilities.
+
+---
+
+# Engineering Philosophy
+
+The central premise behind KDS is straightforward:
+
+Engineering artifacts should derive from the system.
+
+They should not depend on memory.
+
+They should not depend on tribal knowledge.
+
+They should not depend on documentation that stopped evolving years ago.
+
+They should be regeneratable, inspectable, and traceable to the implementation they describe.
+
+A model that cannot remain synchronized with reality will eventually lose credibility.
+
+Engineering truth requires continuity between implementation and understanding.
+
+KDS is an effort to establish and maintain that continuity.
+
+---
+
+# Current Areas of Focus
+
+- Legacy Software Reconstruction
+- Architecture Recovery
+- Data Flow Analysis
+- Requirements Recovery
+- Traceability Generation
+- CASE Environment Evolution
+- Documentation Synchronization
+- Digital Engineering
+- Model-Based Engineering
+- Critical-System Modernization
+
+---
+
+# Evidence Over Claims
+
+The purpose of this repository is not to ask readers to accept claims.
+
+The purpose is to publish representative artifacts, methodologies, and outputs that can be independently examined and evaluated.
+
+Engineering credibility is established through observable results, traceability, reproducibility, and transparency.
+
+Evidence matters more than claims.
+
+Readers are encouraged to inspect the published artifacts and draw their own conclusions.
+
+---
+
+# Contact
+
+If you are responsible for understanding, modernizing, certifying, securing, or sustaining a legacy software system, I would be interested in discussing your use case.
+
+**Steve Whiseant**
+
+Knowledge Discovery System
+
+---
+
+# License
+
+See LICENSE.md for licensing information.
