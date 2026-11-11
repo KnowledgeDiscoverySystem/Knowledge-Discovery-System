@@ -4,130 +4,223 @@
 
 # Knowledge Discovery System (KDS)
 
-## Deterministic Reconstruction for Critical-System Modernization
+## Deterministic Reconstruction of Legacy Software Systems
 
-KDS is a **proprietary, deterministic modernization capability** built on an analysis engine that has no peer, no competitor, and no equivalent in industry. KDS exists for one purpose: to restore truth, structure, and engineering certainty to legacy systems that were never supposed to fail.
+Knowledge Discovery System (KDS) reconstructs architecture, requirements, interfaces, data flows, traceability, and engineering documentation directly from existing software systems.
 
-For decades, organizations have been forced to choose between two bad options: manual reverse engineering or probabilistic AI inference. Both introduce ambiguity, risk, and drift. KDS eliminates all three. It reconstructs system knowledge directly from the binary with forensic precision, producing certification-grade engineering documentation that is complete, auditable, and traceable.
+Its purpose is straightforward:
 
-This repository is not a software distribution. It is the public-facing doctrine of a capability built and proven under rigorous, disciplined engineering standards.
+**Restore engineering understanding to systems whose documentation, source code, design records, or institutional knowledge are incomplete, outdated, or unavailable.**
 
-## What KDS Is
+KDS is intended for environments where software must be understood before it can be modernized, certified, rehosted, secured, or trusted.
 
-KDS is a **deterministic reconstruction service** for aerospace, medical, defense, industrial, and safety-critical domains. It transforms raw assembly into:
+---
 
-- System Requirements Specifications (SRS)
+## The Problem
 
-- Software Design Documents (SDD)
+Many software systems outlive the documentation and engineering knowledge that once explained them.
 
-- Data Flow Diagrams (DFDs)
+Over time:
 
-- Memory maps and interface definitions
+- Architecture diagrams stop reflecting reality.
+- Design documentation drifts from implementation.
+- Requirements traceability degrades.
+- Subject matter experts retire or move on.
+- Original development artifacts are lost.
+- Mission-critical software remains operational but poorly understood.
 
-- Traceability matrices
+Organizations responsible for aerospace, defense, medical, industrial, and critical infrastructure systems are frequently required to maintain or modernize software they no longer fully understand.
 
-- Verification and validation artifacts
+The result is increased risk, longer modernization cycles, higher verification costs, and reduced engineering confidence.
 
-Every output is derived directly from Assembly. No inference. No guessing. No hallucination. No tribal knowledge required.
+---
 
-## What Makes KDS Unique
+## The KDS Approach
 
-### Logic Is the Only Constant
+KDS addresses this challenge through deterministic software reconstruction.
 
-Every programming language, no matter how it's written -- 1960s COBOL, 1980s Mil-Std-1750A, modern C++ -- converges into one objective reality: machine code. KDS targets that layer directly, reading the signal of actual execution. The result is a reconstruction that stands entirely on its own: independent of the original source language, the original developers, or any existing documentation.
+Rather than relying on interviews, assumptions, incomplete documentation, or probabilistic inference, KDS derives engineering knowledge directly from the implementation itself.
 
-### Speed at a Scale No Manual Process Has Matched
+The objective is to establish a reproducible chain of evidence from executable behavior to engineering artifacts.
 
-KDS performs millions of logical checks per second, turning 5,000 lines of assembly into a complete, navigable model in under a minute. Because the engine resolves the entire model simultaneously rather than building it line by line, a lesson learned this morning can be reflected in a corrected model that same afternoon -- real iteration, at a pace and scale this kind of reconstruction has never run at before.
+Every generated artifact is tied back to observable implementation behavior.
 
-### Traceability Down to the Register
+---
 
-KDS traces the life of a variable: how data enters through a port, moves through an accumulator, lands in a register bank, and influences a control branch. Every call the binary makes into its own compiler or runtime library is identified and drawn as its own named entity, standing alongside the application's own logic. Every entity and every relationship in the model traces back to a specific instruction sequence in the source binary.
+## What KDS Produces
 
-### Full Standards Compliance at Real-World Scale
+KDS reconstructs engineering knowledge and generates artifacts including:
 
-The resulting Data Flow Diagram is 100% compliant with the Yourdon/DeMarco methodology, produced at a scale few have ever attempted. The CASE environment adds a further layer automatically: hover-text abstracts on every library call, giving readers full context on what a routine does without ever leaving the diagram.
+- Software Requirements Specifications (SRS)
+- Software Design Descriptions (SDD)
+- Data Flow Diagrams (DFD)
+- Architectural Models
+- Interface Specifications
+- Memory Maps
+- Control Flow Analysis
+- Traceability Matrices
+- Verification and Validation Artifacts
+- Modernization Planning Documentation
 
-### Quality, Verified at Every Step
+These artifacts support:
 
-Every reconstruction is held to one rigorous standard: every connection placed correctly, every route resolved cleanly. Each determination is backed by direct evidence from the engine's own execution logs -- exact candidate counts, exact reservation histories -- so the result is provably correct. The same discipline that produces the model also audits it, page by page, confirming its accuracy before it's called complete.
+- Legacy System Modernization
+- Software Assurance Activities
+- Certification Preparation
+- Technical Due Diligence
+- Sustainment Planning
+- Knowledge Preservation
 
-## Demonstrated Scale
+---
 
-One representative reconstruction, publicly referenceable in this repository, illustrates the scale KDS operates at:
+## Reconstruction Workflow
 
-- **Source**: 4,969,515 lines of ARM64 assembly (~5 million LOC)
+```text
+Legacy System
+      |
+      v
+Executable Analysis
+      |
+      v
+Control Flow Recovery
+      |
+      v
+Data Flow Recovery
+      |
+      v
+Architecture Reconstruction
+      |
+      v
+Requirements Recovery
+      |
+      v
+Documentation Generation
+      |
+      v
+Traceability & Verification Artifacts
+```
 
-- **Entities extracted**: 112,480
+---
 
-- **Hierarchy depth**: 3,553 levels
+## Why This Matters
 
-- **System complexity**: 4,852 total (average node complexity 3.12 across 1,006 top-level entities; max node complexity 30)
+One of the persistent challenges in software engineering is model drift.
 
-- **Output**: a 3,883-page Data Flow Diagram, fully cross-referenced page to page, published in [`3880 Page DFD ARM64 ASM/`](./3880%20Page%20DFD%20ARM64%20ASM/)
+As software evolves, architecture diagrams, design documentation, requirements specifications, and implementation frequently diverge.
 
-Every entity and every relationship in this diagram traces back to a specific instruction sequence in the source binary. No inference. No sampling. No reconstruction shortcuts.
+Eventually teams stop trusting the documentation because the documentation no longer represents the system.
 
-Note: GitHub's own folder browser truncates directory listings above roughly 1,000 files, so not all 3,883 pages will appear when browsing that folder directly on GitHub. Every file is present in the repository regardless -- clone the repository, or link to a specific page directly (e.g. `.../3880%20Page%20DFD%20ARM64%20ASM/Page_1500.pdf`), to reach any page not shown in the truncated listing.
+KDS is part of a broader effort to maintain alignment between:
 
+- Software Implementation
+- Architecture
+- Requirements
+- Documentation
+- Verification Evidence
 
-## Repository Structure
+The goal is not simply to generate engineering artifacts.
 
-This repository contains the conceptual, philosophical, and methodological foundation of KDS:
+The goal is to maintain engineering truth throughout the lifecycle of a system.
 
-**Founder_Manifesto.md** – The doctrine and worldview behind deterministic engineering.
+---
 
-**Capabilities_Statement.md** – A formal articulation of what KDS delivers.
+## Repository Contents
 
-**Methodology.md** – The high-level process that governs deterministic reconstruction.
+This repository contains public information describing the KDS methodology together with representative engineering artifacts and supporting material.
 
-**CFP_Abstract.md** – The conference-ready abstract introducing the KDS paradigm.
+### Documentation
 
-**examples/** – Fictional but representative artifacts demonstrating output structure.
+- Methodology Descriptions
+- Architectural Concepts
+- Research Materials
+- Technical White Papers
+- Conference Abstracts
 
-**LICENSE.md** – A proprietary license protecting all intellectual property.
+### Engineering Artifacts
 
-These documents exist to inform, not to enable replication.
+Representative examples include:
 
-## Engagement Model
+- Data Flow Diagrams
+- Traceability Structures
+- Architectural Views
+- Documentation Frameworks
+- Reconstruction Outputs
 
-KDS is offered as a **confidential, high-assurance modernization service.** Engagements typically include:
+Where possible, generated artifacts are published to allow independent evaluation of structure, traceability, and engineering completeness.
 
-**1. Binary intake and scoping**
+---
 
-**2. Deterministic reconstruction of system behavior**
+## Intended Applications
 
-**3. Generation of engineering documentation**
+### Aerospace and Avionics
 
-**4. Traceability and verification mapping**
+Systems requiring long-term sustainment, certification support, and modernization planning.
 
-**5. Delivery of a complete, auditable engineering package**
+### Defense Systems
 
-## Who This Is For
+Software-intensive platforms operating under strict assurance and traceability requirements.
 
-KDS serves organizations responsible for systems where failure is not an option:
+### Medical Device Software
 
-- Aerospace and avionics
+Systems requiring documentation alignment, verification support, and regulatory compliance.
 
-- Medical devices
+### Industrial Control Systems
 
-- Defense and national security systems
+Long-lived operational systems where source documentation may be incomplete or obsolete.
 
-- Industrial control systems
+### Critical Infrastructure
 
-- Critical infrastructure
+Software whose continued operation depends on maintaining accurate engineering understanding over extended lifecycles.
 
-If your system is undocumented, partially documented, or too risky to modify, KDS restores the engineering truth required to move forward.
+---
 
-## License
+## Current Focus Areas
 
-All content in this repository is proprietary and protected. No rights are granted to copy, modify, distribute, or derive from any material herein. See **LICENSE.md** for full terms.
+- Legacy Software Reconstruction
+- Software Architecture Recovery
+- Requirements Recovery
+- Data Flow Analysis
+- Traceability Generation
+- CASE Environment Evolution
+- Model-Based Engineering
+- Documentation Synchronization
+- Critical-System Modernization
 
-KDS is a sovereign, deterministic modernization capability. This repository is its public doctrine—not its implementation.
+---
+
+## Research Perspective
+
+A longstanding challenge in software engineering has been maintaining consistency between system implementation and the models used to describe it.
+
+Traditional modeling approaches often create accurate initial representations that become increasingly disconnected from the software as maintenance and enhancement activities occur.
+
+KDS explores approaches for continuously deriving engineering knowledge from implementation artifacts so that architectural models, documentation, and traceability structures remain aligned with the systems they represent.
+
+---
+
+## Evidence Over Claims
+
+The goal of this repository is not to ask readers to accept claims.
+
+The goal is to publish representative artifacts, methodologies, and outputs that can be independently examined and evaluated.
+
+Engineering credibility is established through observable results, traceability, and reproducibility.
+
+Where possible, generated artifacts are made available for inspection.
+
+---
 
 ## Contact
 
-If a capability like this is relevant to what your organization is building, securing, or trying to understand, I'd welcome hearing from you. Reach out to talk about the technology, ask questions, or explore where a conversation might lead. KDS operates globally and supports classified and unclassified environments.
+If you are responsible for understanding, modernizing, certifying, securing, or sustaining a legacy software system, I would be interested in discussing your use case.
 
-**Steve Whiseant**
-Knowledge Discovery Systems
+**Steve Whiseant**  
+Knowledge Discovery System
+
+---
+
+## License
+
+All repository content is protected under the terms described in LICENSE.md.
+
+The materials contained herein are provided for informational and evaluation purposes unless otherwise specified.
