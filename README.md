@@ -2,7 +2,7 @@
   <img src="assets/logo.jpg" alt="KDS Logo" width="200">
 </p>
 
-# Knowledge Discovery System (KDS)
+# Knowledge Discovery System (KDS) — Continuous Architecture and Requirements Recovery for Legacy Software
 
 Keywords: CASE Tools, Software Architecture Recovery, Data Flow Analysis, Requirements Recovery, Legacy Software Modernization, Model Drift, Traceability Engineering, Digital Engineering, Systems Engineering, Reverse Engineering
 
