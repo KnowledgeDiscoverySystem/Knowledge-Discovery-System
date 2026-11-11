@@ -4,6 +4,8 @@
 
 # Knowledge Discovery System (KDS)
 
+Keywords: CASE Tools, Software Architecture Recovery, Data Flow Analysis, Requirements Recovery, Legacy Software Modernization, Model Drift, Traceability Engineering, Digital Engineering, Systems Engineering, Reverse Engineering
+
 ## The Challenge Has Never Been Generating a Model
 
 The challenge has been keeping the model synchronized with reality.
