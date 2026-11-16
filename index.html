@@ -3,31 +3,212 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Knowledge Discovery System</title>
-  <meta name="description" content="Knowledge Discovery System: deterministic legacy system reconstruction from raw assembly to certification-grade documentation.">
+  <title>Knowledge Discovery System (KDS): Continuous Architecture and Requirements Recovery</title>
+  <meta name="description" content="Knowledge Discovery System (KDS) continuously derives architecture, requirements, documentation and traceability from the implementation of active and legacy software systems, so engineering models stay synchronized with reality.">
+  <meta name="keywords" content="CASE tools, software architecture recovery, data flow analysis, requirements recovery, legacy software modernization, model drift, traceability engineering, digital engineering, systems engineering, reverse engineering">
   <link rel="canonical" href="https://knowledgediscoverysystem.github.io/Knowledge-Discovery-System/">
   <style>
-    body { font-family: system-ui, sans-serif; max-width: 720px; margin: 3rem auto; padding: 0 1rem; line-height: 1.6; color: #222; }
-    h1 { margin-bottom: .25rem; }
-    .tag { color: #555; margin-top: 0; }
+    body { font-family: system-ui, -apple-system, Segoe UI, sans-serif; max-width: 800px; margin: 2.5rem auto; padding: 0 1rem; line-height: 1.65; color: #222; }
+    h1 { font-size: 1.9rem; line-height: 1.25; }
+    h2 { margin-top: 2.2rem; border-bottom: 1px solid #ddd; padding-bottom: .3rem; }
     a { color: #0b5cad; }
+    .logo { text-align: center; }
+    .kw { color: #555; font-size: .95rem; }
+    pre { background: #f5f5f5; padding: 1rem; overflow-x: auto; }
+    nav { margin: 1rem 0 2rem; padding: .75rem 1rem; background: #f0f5fb; border-radius: 6px; }
+    nav a { margin-right: 1rem; white-space: nowrap; }
+    footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid #ddd; color: #555; font-size: .9rem; }
   </style>
 </head>
 <body>
-  <h1>Knowledge Discovery System</h1>
-  <p class="tag">Deterministic legacy system reconstruction from raw assembly to certification-grade documentation.</p>
+  <p class="logo"><img src="assets/logo.jpg" alt="KDS Logo" width="200"></p>
 
-  <h2>About</h2>
-  <p>Knowledge Discovery System is a deterministic approach to reconstructing legacy systems directly from raw assembly code and producing certification-grade documentation, including software design and requirements specifications.</p>
+  <h1>Knowledge Discovery System (KDS): Continuous Architecture and Requirements Recovery for Active and Legacy Software Systems</h1>
+  <p class="kw"><strong>Keywords:</strong> CASE Tools, Software Architecture Recovery, Data Flow Analysis, Requirements Recovery, Legacy Software Modernization, Model Drift, Traceability Engineering, Digital Engineering, Systems Engineering, Reverse Engineering</p>
 
-  <h2>Explore</h2>
+  <nav>
+    <a href="https://github.com/KnowledgeDiscoverySystem/Knowledge-Discovery-System">Source repository</a>
+    <a href="https://github.com/KnowledgeDiscoverySystem/Knowledge-Discovery-System/tree/main/docs">Documentation</a>
+    <a href="https://github.com/KnowledgeDiscoverySystem/Knowledge-Discovery-System/tree/main/examples">Examples</a>
+    <a href="https://github.com/KnowledgeDiscoverySystem/Knowledge-Discovery-System/blob/main/Services.md">Services</a>
+    <a href="https://github.com/KnowledgeDiscoverySystem/Knowledge-Discovery-System/blob/main/Supported%20Architectures.md">Supported architectures</a>
+  </nav>
+
+  <h2>The Challenge Has Never Been Generating a Model</h2>
+  <p>The challenge has been keeping the model synchronized with reality.</p>
+  <p>For decades, software engineering has struggled with a fundamental problem.</p>
+  <p>Architectures are documented. Requirements are documented. Designs are documented. Data flows are documented.</p>
+  <p>Then the software changes.</p>
+  <p>The implementation evolves while the models, diagrams, documentation, and engineering artifacts remain frozen in time.</p>
+  <p>Eventually the documentation stops matching the system. Engineers stop trusting it. The model becomes a historical artifact rather than a representation of reality.</p>
+  <p>This failure mode is one of the primary reasons traditional CASE (Computer-Aided Software Engineering) environments never achieved their original promise.</p>
+  <p>Knowledge Discovery System (KDS) was created to address that problem.</p>
+  <p>Rather than treating architecture, requirements, documentation, traceability, and engineering artifacts as static deliverables, KDS continuously derives them from the implementation itself, enabling regeneration as software evolves.</p>
+  <p><strong>The objective is not documentation generation.</strong></p>
+  <p><strong>The objective is maintaining engineering truth.</strong></p>
+
+  <h2>Evidence First</h2>
+  <p>The most significant artifact currently published in this repository is a generated Data Flow Diagram (DFD) consisting of approximately <strong>3,883 pages</strong>.</p>
+  <p>This is not a conceptual example. It is an actual engineering artifact generated from analysis of a real software system.</p>
+  <p>The published artifact contains:</p>
   <ul>
-    <li><a href="https://github.com/KnowledgeDiscoverySystem/Knowledge-Discovery-System/blob/main/README.md">Project overview (README)</a></li>
-    <li><a href="https://github.com/KnowledgeDiscoverySystem/Knowledge-Discovery-System/blob/main/Services.md">Services</a></li>
-    <li><a href="https://github.com/KnowledgeDiscoverySystem/Knowledge-Discovery-System/blob/main/Supported%20Architectures.md">Supported architectures</a></li>
-    <li><a href="https://github.com/KnowledgeDiscoverySystem/Knowledge-Discovery-System/tree/main/docs">Documentation</a></li>
-    <li><a href="https://github.com/KnowledgeDiscoverySystem/Knowledge-Discovery-System/tree/main/examples">Examples</a></li>
-    <li><a href="https://github.com/KnowledgeDiscoverySystem/Knowledge-Discovery-System">Source repository on GitHub</a></li>
+    <li>Recovered data flows</li>
+    <li>Hyperlinked navigation throughout the model</li>
+    <li>Engineering traceability structures</li>
+    <li>Associated implementation details</li>
+    <li>Cross-referenced engineering artifacts</li>
   </ul>
+  <p>Rather than describing a capability, this repository publishes generated engineering output for direct inspection. Readers are encouraged to inspect the artifact and evaluate the results for themselves.</p>
+
+  <h2>Why This Matters</h2>
+  <p>The challenge has never been creating documentation once. The challenge has been keeping engineering knowledge synchronized with reality.</p>
+  <p>As software evolves:</p>
+  <ul>
+    <li>Documentation drifts</li>
+    <li>Architecture drifts</li>
+    <li>Requirements drift</li>
+    <li>Traceability deteriorates</li>
+  </ul>
+  <p>Eventually teams stop trusting the documentation because it no longer represents the software.</p>
+  <p>KDS is built around a different principle:</p>
+  <p><strong>Engineering knowledge should be regenerated from implementation rather than manually maintained after the fact.</strong></p>
+
+  <h2>What KDS Produces</h2>
+  <p>Knowledge Discovery System reconstructs engineering knowledge directly from operational software systems. Generated artifacts include:</p>
+  <ul>
+    <li>Software Requirements Specifications (SRS)</li>
+    <li>Software Design Descriptions (SDD)</li>
+    <li>Data Flow Diagrams (DFD)</li>
+    <li>Architectural Models</li>
+    <li>Interface Definitions</li>
+    <li>Memory Maps</li>
+    <li>Traceability Matrices</li>
+    <li>Verification and Validation Artifacts</li>
+    <li>Modernization Documentation</li>
+  </ul>
+  <p>The resulting artifacts provide a current, traceable, and inspectable representation of the system being analyzed.</p>
+
+  <h2>The Challenge Facing Legacy Systems</h2>
+  <p>Organizations responsible for long-lived software systems commonly encounter:</p>
+  <ul>
+    <li>Missing documentation</li>
+    <li>Outdated documentation</li>
+    <li>Incomplete requirements records</li>
+    <li>Architecture diagrams that no longer match implementation</li>
+    <li>Loss of institutional knowledge</li>
+    <li>Increasing modernization risk</li>
+  </ul>
+  <p>This challenge spans multiple sectors including:</p>
+  <ul>
+    <li>Aerospace and Avionics</li>
+    <li>Defense Systems</li>
+    <li>Medical Devices</li>
+    <li>Industrial Control Systems</li>
+    <li>Critical Infrastructure</li>
+    <li>Long-Lifecycle Embedded Systems</li>
+  </ul>
+  <p>In many cases, organizations are expected to maintain, certify, secure, modernize, or extend software they do not fully understand.</p>
+
+  <h2>Deterministic Reconstruction</h2>
+  <p>KDS approaches that challenge differently. Rather than relying on assumptions, recollection, tribal knowledge, or probabilistic inference, KDS derives engineering knowledge directly from the implementation itself.</p>
+  <p>The goal is to establish a traceable chain of evidence connecting:</p>
+  <p><strong>Implementation → Architecture → Requirements → Documentation → Verification Artifacts</strong></p>
+  <p>This creates engineering artifacts that can be evaluated, inspected, traced, and regenerated from the system they describe.</p>
+
+  <h2>Beyond Reverse Engineering</h2>
+  <p>Traditional reverse engineering focuses on understanding how a system works. KDS focuses on restoring and maintaining engineering understanding throughout the lifecycle of a system.</p>
+  <p>The distinction is important. A recovered diagram is useful. A regeneratable engineering model is transformational. A static representation eventually becomes obsolete. A continuously regeneratable representation can evolve alongside the software it describes.</p>
+
+  <h2>Regeneration Instead of Drift</h2>
+  <p>Historically, software models and documentation suffer from drift. Over time, engineering artifacts become increasingly disconnected from the systems they were intended to describe.</p>
+  <p>KDS replaces static documentation with a regeneration-centric approach. When implementation changes, engineering knowledge can be regenerated from the implementation itself.</p>
+  <p>The objective is to maintain alignment between:</p>
+  <ul>
+    <li>Software Implementation</li>
+    <li>Architecture</li>
+    <li>Requirements</li>
+    <li>Documentation</li>
+    <li>Verification Evidence</li>
+  </ul>
+  <p>Engineering artifacts remain useful only so long as they remain connected to reality.</p>
+
+  <h2>Reconstruction Workflow</h2>
+  <ol>
+    <li>Legacy System</li>
+    <li>Implementation Analysis</li>
+    <li>Control Flow Recovery</li>
+    <li>Data Flow Recovery</li>
+    <li>Architectural Reconstruction</li>
+    <li>Requirements Recovery</li>
+    <li>Documentation Generation</li>
+    <li>Traceability Generation</li>
+    <li>Verification Artifacts</li>
+    <li>Regeneration as the System Evolves</li>
+  </ol>
+
+  <h2>Relevant Topics</h2>
+  <ul>
+    <li>CASE Tools</li>
+    <li>Software Architecture Recovery</li>
+    <li>Legacy Software Modernization</li>
+    <li>Requirements Recovery</li>
+    <li>Data Flow Analysis</li>
+    <li>Traceability Engineering</li>
+    <li>Model-Based Engineering (MBSE)</li>
+    <li>Digital Engineering</li>
+    <li>Systems Engineering</li>
+    <li>Reverse Engineering</li>
+    <li>Software Documentation</li>
+    <li>Verification and Validation</li>
+    <li>Critical Systems Engineering</li>
+    <li>Legacy Code Analysis</li>
+    <li>Engineering Knowledge Management</li>
+  </ul>
+
+  <h2>Repository Contents</h2>
+  <p>The repository contains public information describing KDS methodology together with representative engineering artifacts. Contents may include:</p>
+  <ul>
+    <li>Generated Data Flow Diagrams</li>
+    <li>Architectural Models</li>
+    <li>Traceability Structures</li>
+    <li>Reconstruction Artifacts</li>
+    <li>Research Material</li>
+    <li>Technical Papers</li>
+    <li>Conference Submissions</li>
+    <li>Methodological Documentation</li>
+  </ul>
+  <p>Where possible, generated artifacts are published for independent inspection. The intent is to provide evidence of results rather than descriptions of capabilities.</p>
+
+  <h2>Engineering Philosophy</h2>
+  <p>The central premise behind KDS is straightforward: engineering artifacts should derive from the system.</p>
+  <p>They should not depend on memory. They should not depend on tribal knowledge. They should not depend on documentation that stopped evolving years ago.</p>
+  <p>They should be regeneratable, inspectable, and traceable to the implementation they describe.</p>
+  <p>A model that cannot remain synchronized with reality will eventually lose credibility. Engineering truth requires continuity between implementation and understanding. KDS is an effort to establish and maintain that continuity.</p>
+
+  <h2>Current Areas of Focus</h2>
+  <ul>
+    <li>Legacy Software Reconstruction</li>
+    <li>Architecture Recovery</li>
+    <li>Data Flow Analysis</li>
+    <li>Requirements Recovery</li>
+    <li>Traceability Generation</li>
+    <li>CASE Environment Evolution</li>
+    <li>Documentation Synchronization</li>
+    <li>Digital Engineering</li>
+    <li>Model-Based Engineering</li>
+    <li>Critical-System Modernization</li>
+  </ul>
+
+  <h2>Evidence Over Claims</h2>
+  <p>The purpose of this repository is not to ask readers to accept claims. The purpose is to publish representative artifacts, methodologies, and outputs that can be independently examined and evaluated.</p>
+  <p>Engineering credibility is established through observable results, traceability, reproducibility, and transparency. Evidence matters more than claims. Readers are encouraged to inspect the published artifacts and draw their own conclusions.</p>
+
+  <h2>Contact</h2>
+  <p>If you are responsible for understanding, modernizing, certifying, securing, or sustaining a legacy software system, I would be interested in discussing your use case.</p>
+  <p><strong>Steve Whiseant</strong><br>Knowledge Discovery System</p>
+
+  <footer>
+    License: see <a href="https://github.com/KnowledgeDiscoverySystem/Knowledge-Discovery-System/blob/main/LICENSE.md">LICENSE.md</a> in the repository.
+  </footer>
 </body>
 </html>
